@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 90 320 300" width="320" height="300">
+  <defs>
+    <radialGradient id="skin" cx="38%" cy="28%" r="80%">
+      <stop offset="0" stop-color="#f1cfae"/>
+      <stop offset=".55" stop-color="#d9a77f"/>
+      <stop offset="1" stop-color="#b07a55"/>
+    </radialGradient>
+    <radialGradient id="beard" cx="50%" cy="85%" r="70%">
+      <stop offset="0" stop-color="#f2f0ec"/>
+      <stop offset=".45" stop-color="#c9c4be"/>
+      <stop offset="1" stop-color="#4c4541"/>
+    </radialGradient>
+    <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3d44"/>
+      <stop offset="1" stop-color="#22242a"/>
+    </linearGradient>
+  </defs>
+  <!-- suit and shirt -->
+  <path d="M130 400 C136 334 180 300 280 298 C380 300 424 334 430 400 Z" fill="url(#suit)"/>
+  <path d="M240 300 L280 400 L320 300 Z" fill="#f7f5f2"/>
+  <path d="M230 302 L278 400 L250 400 L206 312 Z" fill="#2a2c32"/>
+  <path d="M330 302 L282 400 L310 400 L354 312 Z" fill="#2a2c32"/>
+  <path d="M256 262 L304 262 L310 304 L280 318 L250 304 Z" fill="#c48e66"/>
+  <!-- ears -->
+  <ellipse cx="210" cy="204" rx="13" ry="20" fill="#cf9a72"/>
+  <ellipse cx="350" cy="204" rx="13" ry="20" fill="#cf9a72"/>
+  <!-- head -->
+  <ellipse cx="280" cy="188" rx="70" ry="84" fill="url(#skin)"/>
+  <ellipse cx="256" cy="132" rx="30" ry="16" fill="#ffffff" opacity=".35" transform="rotate(-20 256 132)"/>
+  <path d="M213 176 C212 196 214 212 220 226 L226 222 C221 208 219 192 220 176 Z" fill="#8d847d" opacity=".55"/>
+  <path d="M347 176 C348 196 346 212 340 226 L334 222 C339 208 341 192 340 176 Z" fill="#8d847d" opacity=".55"/>
+  <!-- beard -->
+  <path d="M216 214 C220 252 240 290 280 298 C320 290 340 252 344 214 C334 232 322 240 306 242 C296 236 288 234 280 234 C272 234 264 236 254 242 C238 240 226 232 216 214 Z" fill="url(#beard)"/>
+  <path d="M250 240 C262 230 274 230 280 234 C286 230 298 230 310 240 C298 246 288 244 280 242 C272 244 262 246 250 240 Z" fill="#3b3431"/>
+  <!-- nervous grimace -->
+  <rect x="262" y="250" width="36" height="12" rx="5" fill="#ffffff" stroke="#5a2a26" stroke-width="3"/>
+  <path d="M271 250 V262 M280 250 V262 M289 250 V262" stroke="#5a2a26" stroke-width="2"/>
+  <!-- worried brows -->
+  <path d="M224 160 Q240 150 258 160" stroke="#4a423e" stroke-width="6" fill="none" stroke-linecap="round" transform="rotate(8 241 156)"/>
+  <path d="M302 160 Q320 150 336 160" stroke="#4a423e" stroke-width="6" fill="none" stroke-linecap="round" transform="rotate(-8 319 156)"/>
+  <!-- eyes looking left, toward the incoming pies -->
+  <ellipse cx="241" cy="184" rx="11" ry="13" fill="#ffffff"/>
+  <ellipse cx="319" cy="184" rx="11" ry="13" fill="#ffffff"/>
+  <circle cx="236" cy="186" r="6" fill="#5a3a22"/><circle cx="236" cy="186" r="3" fill="#1d1412"/>
+  <circle cx="314" cy="186" r="6" fill="#5a3a22"/><circle cx="314" cy="186" r="3" fill="#1d1412"/>
+  <!-- burgundy rectangular glasses -->
+  <rect x="219" y="168" width="44" height="32" rx="7" fill="#ffffff" fill-opacity=".12" stroke="#7a2630" stroke-width="5"/>
+  <rect x="297" y="168" width="44" height="32" rx="7" fill="#ffffff" fill-opacity=".12" stroke="#7a2630" stroke-width="5"/>
+  <path d="M263 182 Q280 176 297 182" stroke="#7a2630" stroke-width="5" fill="none"/>
+  <path d="M219 176 L206 172 M341 176 L354 172" stroke="#7a2630" stroke-width="4" stroke-linecap="round"/>
+  <!-- nose -->
+  <path d="M282 196 Q290 214 280 222" stroke="#b07a55" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

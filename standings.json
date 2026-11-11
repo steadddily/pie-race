@@ -1,0 +1,236 @@
+{
+ "startsOn": "2026-11-01",
+ "endsOn": "2026-12-15",
+ "minToPlace": 4,
+ "updatedAt": "2026-11-11T17:59:48Z",
+ "standings": [
+  {
+   "rank": 1,
+   "name": "Anna J.",
+   "policies": 2,
+   "qualified": false
+  },
+  {
+   "rank": 2,
+   "name": "Andrea R.",
+   "policies": 1,
+   "qualified": false
+  },
+  {
+   "rank": 3,
+   "name": "Vashon R.",
+   "policies": 1,
+   "qualified": false
+  },
+  {
+   "rank": 4,
+   "name": "James H.",
+   "policies": 1,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Abigail M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Addison M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Aida M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Alex S.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Alyssa W.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Amanda R.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Avery D.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Ben P.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Brandon R.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Caleb M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Cierra G.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Colby B.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Dana R.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Delaney G.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Jackson W.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Jason M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Jenna J.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Josh M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Kalani H.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Kate W.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Kelley B.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Madelyn K.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Malorri C.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Megan M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Melissa P.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Myriah A.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Olivia H.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Rachel M.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Robert S.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Rose A.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Skyler S.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Sydney P.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Vang T.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 5,
+   "name": "Wolfgang R.",
+   "policies": 0,
+   "qualified": false
+  }
+ ]
+}

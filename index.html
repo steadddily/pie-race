@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Race to the Pie</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --plum: #4b1f43; --plum-lift: #7a3570; --night: #3a1534; --cream: #fdf5fc;
+  --gold: #ffd166; --orange: #ef8a5a; --ink: #221820; --muted: #6b5d66;
+  --paper: #fbf8f4; --surface: #ffffff; --line: #e8e0e4;
+  --who: 10rem;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.5 Inter, -apple-system, system-ui, sans-serif; }
+.page { max-width: 58rem; margin: 0 auto; padding: 1.25rem 16px 3rem; }
+h1 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: clamp(2.1rem, 7vw, 3.2rem); line-height: 1.02; margin: 0; color: var(--plum); }
+.sub { margin: .4rem 0 0; color: var(--muted); }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .8rem; }
+.chip { font-size: .85rem; font-weight: 600; padding: .25rem .7rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.callout { margin: 1rem 0 0; padding: .65rem 1rem; border-radius: .75rem; background: #fff4d6; border: 2px dashed var(--orange); }
+.callout[hidden] { display: none; }
+
+.range {
+  margin-top: 1rem; display: grid; grid-template-columns: minmax(0, 1fr) 11rem;
+  border-radius: 1rem; overflow: hidden; color: var(--cream); min-height: 16rem;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 59px, rgba(255,255,255,.04) 59px 60px),
+    radial-gradient(120% 140% at 100% 50%, var(--plum-lift) 0%, var(--night) 70%);
+}
+.lanes { position: relative; padding: 1rem 0 1rem 1rem; min-width: 0; }
+.range-line { position: absolute; top: 0; bottom: 0; border-left: 2px dashed rgba(255,209,102,.85); pointer-events: none; }
+.range-line span { position: absolute; top: .35rem; left: .35rem; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); white-space: nowrap; }
+ol.lane-list { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: .35rem; }
+.lane { display: grid; grid-template-columns: var(--who) minmax(0, 1fr); align-items: center; min-height: 2.6rem; }
+.who { font-weight: 600; font-size: .9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding-right: .5rem; }
+.rank { color: rgba(253,245,252,.55); font-size: .8rem; font-variant-numeric: tabular-nums; }
+.track { position: relative; height: 2.4rem; border-bottom: 1px solid rgba(255,255,255,.08); }
+.trail { position: absolute; top: 50%; left: 0; width: 0; height: 3px; transform: translateY(-50%); border-radius: 3px;
+  background: linear-gradient(90deg, transparent, rgba(253,245,252,.5)); transition: width 1.4s cubic-bezier(.2,.8,.2,1); }
+.pie { position: absolute; top: 50%; left: 0; font-size: 1.9rem; line-height: 1; transform: translate(-50%, -50%);
+  transition: left 1.4s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 3px 4px rgba(0,0,0,.35)); }
+.badge { position: absolute; top: -.35rem; right: -.55rem; min-width: 1.15rem; height: 1.15rem; padding: 0 .25rem; border-radius: 999px;
+  background: var(--cream); color: var(--plum); font: 800 .7rem/1.15rem Inter, sans-serif; text-align: center; }
+.lane.in .badge { background: var(--gold); }
+.lane.in .who { color: var(--gold); }
+.wobble { animation: wobble 1.1s ease-in-out 1.5s infinite; }
+@keyframes wobble {
+  0%, 100% { transform: translate(-50%, -50%) rotate(0); }
+  25% { transform: translate(-46%, -54%) rotate(-10deg); }
+  75% { transform: translate(-54%, -46%) rotate(10deg); }
+}
+.quiet { margin: 2.5rem 0 0; color: rgba(253,245,252,.75); }
+
+.target { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem .5rem;
+  background: radial-gradient(circle at 50% 45%, rgba(255,209,102,.18), transparent 65%); }
+.face-wrap { position: relative; width: 100%; max-width: 10rem; }
+.face-wrap img { display: block; width: 100%; height: auto; }
+.shake { animation: shake 2.4s ease-in-out infinite; }
+@keyframes shake { 0%, 86%, 100% { transform: translateX(0); } 88% { transform: translateX(-3px) rotate(-2deg); } 92% { transform: translateX(3px) rotate(2deg); } 96% { transform: translateX(-2px); } }
+.sweat { position: absolute; font-size: 1.1rem; animation: drip 1.8s ease-in infinite; display: none; }
+.shake .sweat { display: block; }
+.sweat.s1 { top: 18%; left: 8%; } .sweat.s2 { top: 26%; right: 6%; animation-delay: .9s; }
+@keyframes drip { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(1.5rem); opacity: 0; } }
+.target-label { margin-top: .4rem; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: rgba(253,245,252,.75); }
+
+.kitchen { margin-top: 1.5rem; }
+.kitchen h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 1.15rem; margin: 0 0 .35rem; }
+.kitchen p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
+.footer { margin-top: 1.5rem; font-size: .8rem; color: var(--muted); text-align: center; }
+
+.finale { position: fixed; inset: 0; z-index: 50; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 16px;
+  background: rgba(58,21,52,.94); animation: slam .6s cubic-bezier(.2,1.4,.4,1) both; cursor: pointer; }
+.finale.on { display: flex; }
+.finale img { width: min(100%, 40rem); height: auto; border-radius: 1rem; }
+.finale p { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: clamp(1.5rem, 6vw, 2.6rem); margin: 1rem 0 0; text-align: center; }
+@keyframes slam { from { transform: scale(1.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 36rem) {
+  :root { --who: 6.25rem; }
+  .range { grid-template-columns: minmax(0, 1fr) 5.25rem; }
+  .who { font-size: .8rem; }
+  .pie { font-size: 1.5rem; }
+  .target { padding: .5rem .25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wobble, .shake, .sweat, .finale { animation: none; }
+  .pie, .trail { transition: none; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Race to the Pie 🥧</h1>
+  <p class="sub" id="sub">Every XSL policy you sell moves your pie closer to the face.</p>
+  <div class="chips">
+    <span class="chip" id="days">⏳</span>
+    <span class="chip">🥇 $150 + the pie</span>
+    <span class="chip">🥈 $100</span>
+    <span class="chip">🥉 $50</span>
+  </div>
+  <p class="callout" id="callout" hidden></p>
+
+  <section class="range" aria-label="The pie launch">
+    <div class="lanes" id="lanes">
+      <div class="range-line" id="rangeLine"><span id="rangeLabel">in range</span></div>
+      <ol class="lane-list" id="laneList"></ol>
+      <p class="quiet" id="quiet" hidden>No pies in the air yet. The first sale launches the first pie.</p>
+    </div>
+    <div class="target">
+      <div class="face-wrap" id="face">
+        <img src="face.svg" alt="The director, waiting for the pie">
+        <span class="sweat s1">💧</span><span class="sweat s2">💧</span>
+      </div>
+      <span class="target-label">🎯 the face</span>
+    </div>
+  </section>
+
+  <section class="kitchen" id="kitchen" hidden>
+    <h2>Still in the kitchen 🍳</h2>
+    <p id="kitchenNames"></p>
+  </section>
+
+  <p class="footer"><span id="rules"></span><br><span id="updated">Loading…</span></p>
+</div>
+
+<div class="finale" id="finale" role="status" title="Click to close">
+  <img src="splat.svg" alt="">
+  <p id="finaleText"></p>
+</div>
+
+<script>
+const MEDALS = ["🥇", "🥈", "🥉"];
+
+function chicagoToday() {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/Chicago" }).format(new Date());
+}
+function shortDate(day) {
+  return new Intl.DateTimeFormat("en-US", { timeZone: "UTC", month: "short", day: "numeric" }).format(new Date(day + "T00:00:00Z"));
+}
+function daysLeft(endsOn) {
+  const ms = Date.parse(endsOn + "T00:00:00Z") - Date.parse(chicagoToday() + "T00:00:00Z");
+  return Math.max(0, Math.round(ms / 86400000) + 1);
+}
+function updatedLabel(iso) {
+  const t = new Intl.DateTimeFormat("en-US", { timeZone: "America/Chicago", weekday: "short", hour: "numeric", minute: "2-digit" }).format(new Date(iso));
+  return "Updated " + t + " CT · refreshes hourly";
+}
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+
+// The leader always sits close to the face, and the range line always fits.
+function scaleMax(rows, min) {
+  const top = Math.max(0, ...rows.map(r => r.policies));
+  return Math.max(min * 1.5, top * 1.02);
+}
+function along(policies, max) { return Math.min(97, 4 + (policies / max) * 93); }
+
+function render(d) {
+  const left = daysLeft(d.endsOn);
+  const over = left === 0;
+  const min = d.minToPlace;
+  const rows = d.standings;
+  const inPlay = rows.filter(r => r.policies > 0);
+  const kitchen = rows.filter(r => r.policies === 0);
+  const leader = rows.find(r => r.qualified && r.rank === 1) || null;
+  const max = scaleMax(rows, min);
+
+  document.getElementById("sub").textContent =
+    "Every XSL policy you sell moves your pie closer to the face. Sell " + min + " to get in range.";
+  document.getElementById("days").textContent = over ? "⏳ Final" : "⏳ " + left + (left === 1 ? " day left" : " days left");
+  document.getElementById("rules").textContent =
+    "Most XSL policies sold, " + shortDate(d.startsOn) + " to " + shortDate(d.endsOn) +
+    ". Tie goes to the higher total XSL premium. A flat cancel before " + shortDate(d.endsOn) + " does not count.";
+  document.getElementById("updated").textContent = updatedLabel(d.updatedAt);
+
+  const callout = document.getElementById("callout");
+  if (leader && !over) {
+    callout.hidden = false;
+    callout.replaceChildren("🚨 ", el("strong", "", leader.name), " is in range with " + leader.policies + ". Somebody stop them.");
+  }
+
+  const rangeAt = along(min, max);
+  document.getElementById("rangeLine").style.left = "calc(1rem + var(--who) + (100% - 1rem - var(--who)) * " + rangeAt / 100 + ")";
+  document.getElementById("rangeLabel").textContent = "in range · " + min;
+
+  const list = document.getElementById("laneList");
+  document.getElementById("quiet").hidden = inPlay.length > 0;
+  const launches = [];
+  for (const r of inPlay) {
+    const lane = el("li", "lane" + (r.qualified ? " in" : ""));
+    const who = el("span", "who");
+    const medal = r.qualified && r.rank <= 3 ? MEDALS[r.rank - 1] : null;
+    who.append(medal ? medal + " " : el("span", "rank", "#" + r.rank + " "), r.name);
+    const track = el("span", "track");
+    const trail = el("span", "trail");
+    const pie = el("span", "pie" + (leader && leader.name === r.name && !over ? " wobble" : ""), "🥧");
+    pie.append(el("span", "badge", String(r.policies)));
+    track.append(trail, pie);
+    lane.append(who, track);
+    list.append(lane);
+    const pos = along(r.policies, max);
+    launches.push(() => { trail.style.width = pos + "%"; pie.style.left = pos + "%"; });
+  }
+  setTimeout(() => launches.forEach(f => f()), 150);
+
+  if (leader) document.getElementById("face").classList.add("shake");
+
+  if (kitchen.length) {
+    document.getElementById("kitchen").hidden = false;
+    document.getElementById("kitchenNames").textContent = kitchen.map(r => r.name).join(" · ");
+  }
+
+  if (over && leader) {
+    const finale = document.getElementById("finale");
+    document.getElementById("finaleText").textContent = "🏆 " + leader.name + " wins the pie.";
+    finale.classList.add("on");
+    finale.addEventListener("click", () => finale.classList.remove("on"));
+  }
+}
+
+fetch("standings.json?t=" + Date.now(), { cache: "no-store" })
+  .then(r => r.json())
+  .then(render)
+  .catch(() => { document.getElementById("updated").textContent = "Could not load the standings."; });
+</script>
+</body>
+</html>
