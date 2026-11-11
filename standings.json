@@ -2,7 +2,7 @@
  "startsOn": "2026-11-01",
  "endsOn": "2026-12-15",
  "minToPlace": 4,
- "updatedAt": "2026-11-11T17:59:48Z",
+ "updatedAt": "2026-11-11T18:41:54Z",
  "standings": [
   {
    "rank": 1,
@@ -30,12 +30,6 @@
   },
   {
    "rank": 5,
-   "name": "Abigail M.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
    "name": "Addison M.",
    "policies": 0,
    "qualified": false
@@ -48,49 +42,13 @@
   },
   {
    "rank": 5,
-   "name": "Alex S.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Alyssa W.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
    "name": "Amanda R.",
    "policies": 0,
    "qualified": false
   },
   {
    "rank": 5,
-   "name": "Avery D.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Ben P.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
    "name": "Brandon R.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Caleb M.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Cierra G.",
    "policies": 0,
    "qualified": false
   },
@@ -126,12 +84,6 @@
   },
   {
    "rank": 5,
-   "name": "Jenna J.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
    "name": "Josh M.",
    "policies": 0,
    "qualified": false
@@ -150,24 +102,6 @@
   },
   {
    "rank": 5,
-   "name": "Kelley B.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Madelyn K.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Malorri C.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
    "name": "Megan M.",
    "policies": 0,
    "qualified": false
@@ -181,18 +115,6 @@
   {
    "rank": 5,
    "name": "Myriah A.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Olivia H.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 5,
-   "name": "Rachel M.",
    "policies": 0,
    "qualified": false
   },
