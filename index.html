@@ -80,6 +80,30 @@ ol.lane-list { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; 
 .finale p { color: var(--gold); font-family: Fraunces, Georgia, serif; font-size: clamp(1.5rem, 6vw, 2.6rem); margin: 1rem 0 0; text-align: center; }
 @keyframes slam { from { transform: scale(1.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
+.practice { margin-top: 1rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .75rem; text-align: center; }
+.throw { font: 800 1rem Inter, sans-serif; padding: .7rem 1.4rem; border-radius: 999px; border: 0; cursor: pointer;
+  background: var(--gold); color: var(--plum); box-shadow: 0 3px 0 #c99a2e; transition: transform .1s; }
+.throw:active { transform: translateY(2px); box-shadow: 0 1px 0 #c99a2e; }
+.throw:focus-visible { outline: 3px solid var(--plum-lift); outline-offset: 3px; }
+.throw:disabled { opacity: .6; cursor: default; }
+.practice-note { flex-basis: 100%; margin: 0; font-size: .8rem; color: var(--muted); }
+.range { position: relative; }
+.flying { position: absolute; z-index: 5; font-size: 2.2rem; line-height: 1; pointer-events: none; filter: drop-shadow(0 4px 5px rgba(0,0,0,.4)); }
+.cream { position: absolute; inset: 18% 12% 22% 12%; pointer-events: none; opacity: 0; transform: scale(.3);
+  background:
+    radial-gradient(circle at 50% 45%, #fffaf0 0 30%, transparent 31%),
+    radial-gradient(circle at 25% 35%, #fff6e4 0 18%, transparent 19%),
+    radial-gradient(circle at 75% 38%, #fffaf0 0 17%, transparent 18%),
+    radial-gradient(circle at 38% 70%, #fff3dc 0 15%, transparent 16%),
+    radial-gradient(circle at 66% 68%, #fffaf0 0 16%, transparent 17%),
+    radial-gradient(circle at 50% 88%, #f6e7c8 0 9%, transparent 10%);
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,.25)); }
+.cream.hit { animation: splat 2.6s ease-out forwards; }
+@keyframes splat { 0% { opacity: 0; transform: scale(.3); } 8% { opacity: 1; transform: scale(1.15); } 16% { transform: scale(1); }
+  70% { opacity: 1; transform: translateY(6%) scale(1); } 100% { opacity: 0; transform: translateY(18%) scale(.95); } }
+.wince { animation: wince .5s ease-out; }
+@keyframes wince { 0% { transform: rotate(0); } 25% { transform: translateX(6px) rotate(8deg); } 60% { transform: translateX(-3px) rotate(-4deg); } 100% { transform: none; } }
+
 @media (max-width: 36rem) {
   :root { --who: 6.25rem; }
   .range { grid-template-columns: minmax(0, 1fr) 5.25rem; }
@@ -114,10 +138,15 @@ ol.lane-list { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; 
     <div class="target">
       <div class="face-wrap" id="face">
         <img src="face.svg?v=2" alt="The director, waiting for the pie">
-        <span class="sweat s1">💧</span><span class="sweat s2">💧</span>
+        <span class="sweat s1">💧</span><span class="sweat s2">💧</span><span class="cream" id="cream"></span>
       </div>
     </div>
   </section>
+
+  <div class="practice">
+    <button type="button" class="throw" id="throw">🥧 Throw a practice pie</button>
+    <p class="practice-note" id="practiceNote">Practice pies do not count. Only XSL sales move your pie.</p>
+  </div>
 
   <section class="kitchen" id="kitchen" hidden>
     <h2>Still in the kitchen 🍳</h2>
@@ -225,6 +254,38 @@ function render(d) {
     finale.addEventListener("click", () => finale.classList.remove("on"));
   }
 }
+
+// Practice pie: purely for fun, nothing is sent or saved anywhere but this browser.
+(function () {
+  const btn = document.getElementById("throw"), face = document.getElementById("face"), cream = document.getElementById("cream");
+  const range = document.querySelector(".range"), note = document.getElementById("practiceNote");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let thrown = 0;
+  try { thrown = Number(localStorage.getItem("practicePies")) || 0; } catch (e) {}
+  const LINES = ["Practice pies do not count. Only XSL sales move your pie.", "Direct hit. Still 0 policies, though.",
+    "He felt that one. Sell an XSL and make it real.", "Your aim is great. Your XSL count could be greater."];
+  function hit() {
+    cream.classList.remove("hit"); void cream.offsetWidth; cream.classList.add("hit");
+    face.classList.remove("wince"); void face.offsetWidth; face.classList.add("wince");
+    thrown++;
+    try { localStorage.setItem("practicePies", String(thrown)); } catch (e) {}
+    note.textContent = LINES[Math.min(LINES.length - 1, Math.floor(Math.random() * LINES.length))] + " Practice pies thrown: " + thrown + ".";
+    setTimeout(() => { btn.disabled = false; }, 600);
+  }
+  btn.addEventListener("click", () => {
+    btn.disabled = true;
+    if (still || !range.animate) { hit(); return; }
+    const r = range.getBoundingClientRect(), f = face.getBoundingClientRect();
+    const pie = el("span", "flying", "🥧");
+    range.append(pie);
+    const x0 = 12, y0 = r.height - 50, x1 = f.left - r.left + f.width / 2 - 18, y1 = f.top - r.top + f.height * .42 - 18;
+    pie.animate([
+      { transform: `translate(${x0}px, ${y0}px) rotate(0deg) scale(.8)` },
+      { transform: `translate(${(x0 + x1) / 2}px, ${Math.min(y0, y1) - 60}px) rotate(300deg) scale(1.1)`, offset: .5 },
+      { transform: `translate(${x1}px, ${y1}px) rotate(560deg) scale(1.3)` }
+    ], { duration: 700, easing: "cubic-bezier(.3,.1,.5,1)", fill: "forwards" }).onfinish = () => { pie.remove(); hit(); };
+  });
+})();
 
 fetch("standings.json?t=" + Date.now(), { cache: "no-store" })
   .then(r => r.json())
