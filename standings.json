@@ -2,7 +2,7 @@
  "startsOn": "2026-11-01",
  "endsOn": "2026-12-15",
  "minToPlace": 4,
- "updatedAt": "2026-11-17T13:31:34Z",
+ "updatedAt": "2026-11-17T16:31:45Z",
  "standings": [
   {
    "rank": 1,
@@ -18,138 +18,138 @@
   },
   {
    "rank": 3,
-   "name": "Rose A.",
+   "name": "Jackson W.",
    "policies": 1,
    "qualified": false
   },
   {
    "rank": 4,
-   "name": "Vashon R.",
+   "name": "Rose A.",
    "policies": 1,
    "qualified": false
   },
   {
    "rank": 5,
-   "name": "James H.",
+   "name": "Vashon R.",
    "policies": 1,
    "qualified": false
   },
   {
    "rank": 6,
+   "name": "James H.",
+   "policies": 1,
+   "qualified": false
+  },
+  {
+   "rank": 7,
    "name": "Addison M.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Aida M.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Amanda R.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Brandon R.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Colby B.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Dana R.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Delaney G.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
-   "name": "Jackson W.",
-   "policies": 0,
-   "qualified": false
-  },
-  {
-   "rank": 6,
+   "rank": 7,
    "name": "Jason M.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Josh M.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Kalani H.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Kate W.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Megan M.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Melissa P.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Myriah A.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Robert S.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Skyler S.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Sydney P.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Vang T.",
    "policies": 0,
    "qualified": false
   },
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Wolfgang R.",
    "policies": 0,
    "qualified": false
