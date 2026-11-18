@@ -2,41 +2,41 @@
  "startsOn": "2026-11-01",
  "endsOn": "2026-12-15",
  "minToPlace": 4,
- "updatedAt": "2026-11-18T09:32:36Z",
+ "updatedAt": "2026-11-18T15:32:53Z",
  "standings": [
   {
    "rank": 1,
-   "name": "Andrea R.",
+   "name": "James H.",
    "policies": 2,
    "qualified": false
   },
   {
    "rank": 2,
-   "name": "Jackson W.",
+   "name": "Andrea R.",
    "policies": 2,
    "qualified": false
   },
   {
    "rank": 3,
-   "name": "Anna J.",
+   "name": "Jackson W.",
    "policies": 2,
    "qualified": false
   },
   {
    "rank": 4,
+   "name": "Anna J.",
+   "policies": 2,
+   "qualified": false
+  },
+  {
+   "rank": 5,
    "name": "Rose A.",
    "policies": 1,
    "qualified": false
   },
   {
-   "rank": 5,
-   "name": "Vashon R.",
-   "policies": 1,
-   "qualified": false
-  },
-  {
    "rank": 6,
-   "name": "James H.",
+   "name": "Vashon R.",
    "policies": 1,
    "qualified": false
   },
