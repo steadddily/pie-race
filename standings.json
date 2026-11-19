@@ -2,23 +2,23 @@
  "startsOn": "2026-11-01",
  "endsOn": "2026-12-15",
  "minToPlace": 4,
- "updatedAt": "2026-11-19T15:00:43Z",
+ "updatedAt": "2026-11-19T16:00:49Z",
  "standings": [
   {
    "rank": 1,
+   "name": "Jackson W.",
+   "policies": 3,
+   "qualified": false
+  },
+  {
+   "rank": 2,
    "name": "James H.",
    "policies": 2,
    "qualified": false
   },
   {
-   "rank": 2,
-   "name": "Andrea R.",
-   "policies": 2,
-   "qualified": false
-  },
-  {
    "rank": 3,
-   "name": "Jackson W.",
+   "name": "Andrea R.",
    "policies": 2,
    "qualified": false
   },
