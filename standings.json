@@ -2,7 +2,7 @@
  "startsOn": "2026-11-01",
  "endsOn": "2026-12-15",
  "minToPlace": 4,
- "updatedAt": "2026-11-24T14:30:24Z",
+ "updatedAt": "2026-11-24T15:30:28Z",
  "standings": [
   {
    "rank": 1,
@@ -103,6 +103,12 @@
   {
    "rank": 8,
    "name": "Kate W.",
+   "policies": 0,
+   "qualified": false
+  },
+  {
+   "rank": 8,
+   "name": "Malorri C.",
    "policies": 0,
    "qualified": false
   },
